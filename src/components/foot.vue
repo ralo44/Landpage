@@ -1,67 +1,63 @@
 <template>
-  <!-- footer -->
-  <section>
-    <v-footer
-      flat
-      class="blue darken-2 white--text text-center"
-      color="cyan darken-3"
-      dark
-      default
-    >
-      <div>
-        <v-layout column align-center justify-center class="white--text">
-          <img src="../assets/sellodam.jpg" alt="Vuetify.js" height="50" />
-        </v-layout>
-      </div>
-      <v-spacer></v-spacer>
-      <div class="text-center">
+  <v-footer dark padless>
+    <v-card flat tile class="secondary white--text text-center">
+      <v-card>
+        
+      </v-card>
+      <v-card-text>
+        <v-btn
+          v-for="(icon, i) in icons"
+          :key="i"
+          class="mx-4 white--text"
+          :href="icon.link"
+          target="_blank"
+          icon
+        >
+          <v-icon size="24px">{{ icon.text }}</v-icon>
+        </v-btn>
+      </v-card-text>
+
+      <v-card-text class="white--text pt-0 text-center">
         <br />999 389 9382 <br />draneriorl@gmail.com <br />Cenit Medical Center
         piso 7, Consultorio #702, <br />Mérida, Yucatán
-      </div>
-      <v-spacer></v-spacer>
-      <div>
-        <v-flex xs12 sm6 justify="start">
-          <v-card class="elevation-0 transparent">
-            <v-btn
-              icon
-              mdi-facebook
-              href="https://www.facebook.com/Otorrino-M%C3%A9rida-DraNeri-2087800781516991"
-              x-large=""
-              color="white darken-2"
-            >
-              <v-icon>mdi-facebook</v-icon>
-            </v-btn>
-
-            <v-btn
-              icon
-              mdi-phone
-              href="https://www.instagram.com/dra_neri_otorrinomerida/?hl=es-la"
-              x-large
-              color="white darken-2"
-            >
-              <v-icon>mdi-instagram</v-icon>
-            </v-btn>
-
-            <v-btn
-              icon
-              mdi-mail
-              href="mailto:draneriorl@gmail.com?subject=Buen día, Me interesan sus servicios, por favor envieme más información."
-              x-large
-              color="white darken-2"
-            >
-              <v-icon>mdi-mail</v-icon>
-            </v-btn>
-
-            <v-btn icon mdi-phone x-large color="white darken-2">
-              <v-icon>mdi-phone</v-icon>
-            </v-btn>
-          </v-card>
-        </v-flex>
-      </div>
-      <v-card-text class="white--text">
-        {{ new Date().getFullYear() }} —
-        <strong>Ralo</strong>
       </v-card-text>
-    </v-footer>
-  </section>
+
+      <v-divider></v-divider>
+
+      <v-card-text class="white--text">
+        {{ new Date().getFullYear() }} — <strong>ralo44</strong>
+      </v-card-text>
+    </v-card>
+  </v-footer>
 </template>
+
+<style scoped>
+.v-card {
+  width: 100%;
+}
+</style>
+
+<script>
+export default {
+  data: () => ({
+    icons: [
+      {
+        text: "mdi-facebook",
+        link: "https://www.facebook.com/Otorrino-M%C3%A9rida-DraNeri-2087800781516991",
+      },
+      {
+        text: "mdi-mail",
+        link: "mailto:draneriorl@gmail.com?subject=Buen día, Me interesan sus servicios, por favor envieme más información.",
+      },
+      {
+        text: "mdi-instagram",
+        link: "https://www.instagram.com/dra_neri_otorrinomerida/?hl=es-la",
+      },
+      {
+        text: "mdi-whatsapp",
+        link: "",
+      },
+    ],
+  }),
+};
+</script>
